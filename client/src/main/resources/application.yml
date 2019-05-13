@@ -1,0 +1,68 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: eureka-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8081/eureka/,http://peer2:8082/eureka/
+
+feign:
+  hystrix:
+    enabled: true
+
+ribbon:
+  ReadTimeout: 6000
+  ConnectTimeout: 6000
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 6000
+#        semaphore:
+#          maxConcurrentRequests: 1
+#      coreSize: 1
+#      circuitBreaker:
+#        requestVolumeThreshold: 1
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000
+    test#getProviderB():
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3100
+      circuitBreaker:
+        enabled: true
+      timeout:
+        enabled: true
+    providerService#getProvider(Integer):
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000
+      circuitBreaker:
+        enabled: true
+      timeout:
+        enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8091/user
+    client:
+      clientId: demo
+      clientSecret: thissecret
+      accessTokenUri:  http://localhost:8091/oauth/token
+      scope: webclient,mobileclient

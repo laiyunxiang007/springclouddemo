@@ -1,0 +1,9 @@
+server:
+  port: 8092
+spring:
+  application:
+    name: dashboard
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8081/eureka/,http://peer2:8082/eureka/

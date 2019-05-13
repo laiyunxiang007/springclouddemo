@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:8083/
+      discovery:
+        service-id: config-server
+      name: zuul-application

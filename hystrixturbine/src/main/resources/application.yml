@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: turbine
+server:
+  port: 8093
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8081/eureka/,http://peer2:8082/eureka/
+turbine:
+  aggregator:
+    cluster-config: default
+  app-config: eureka-client
+  cluster-name-expression: new String("default")
+

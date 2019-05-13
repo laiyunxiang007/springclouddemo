@@ -1,0 +1,33 @@
+server:
+  port: 8096
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8081/eureka/,http://peer2:8082/eureka/
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+spring:
+  application:
+    name: eureka-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+      routes:
+        - id: eureka-client
+          uri: lb://eureka-client
+          predicates:
+            - Path=/demo/**
+          filters:
+            - StripPrefix=1
+            - RewritePath=/demo/(?<path>.*), /$\{path}
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/fallback

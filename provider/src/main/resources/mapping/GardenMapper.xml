@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.provider.mapper.GardenMapper" >
+  <resultMap id="BaseResultMap" type="com.example.provider.pojo.Garden" >
+    <id column="garden_id" property="gardenId" jdbcType="INTEGER" />
+    <result column="garden_name" property="gardenName" jdbcType="VARCHAR" />
+    <result column="garden_desc" property="gardenDesc" jdbcType="VARCHAR" />
+    <result column="garden_owner" property="gardenOwner" jdbcType="VARCHAR" />
+    <result column="address_id" property="addressId" jdbcType="VARCHAR" />
+    <result column="garden_status" property="gardenStatus" jdbcType="VARCHAR" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from garden
+    where garden_id = #{gardenId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.provider.pojo.Garden" >
+    insert into garden (garden_id, garden_name, garden_desc, 
+      garden_owner, address_id, garden_status, 
+      create_by, create_time, update_by, 
+      update_time, user_id)
+    values (#{gardenId,jdbcType=INTEGER}, #{gardenName,jdbcType=VARCHAR}, #{gardenDesc,jdbcType=VARCHAR}, 
+      #{gardenOwner,jdbcType=VARCHAR}, #{addressId,jdbcType=VARCHAR}, #{gardenStatus,jdbcType=VARCHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{userId,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.provider.pojo.Garden" >
+    update garden
+    set garden_name = #{gardenName,jdbcType=VARCHAR},
+      garden_desc = #{gardenDesc,jdbcType=VARCHAR},
+      garden_owner = #{gardenOwner,jdbcType=VARCHAR},
+      address_id = #{addressId,jdbcType=VARCHAR},
+      garden_status = #{gardenStatus,jdbcType=VARCHAR},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      user_id = #{userId,jdbcType=INTEGER}
+    where garden_id = #{gardenId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultType="java.util.Map" parameterType="java.lang.Integer">
+    select garden_id, garden_name, garden_desc, garden_owner, address_id, garden_status, 
+    create_by, create_time, update_by, update_time, user_id
+    from garden
+    where garden_id = #{gardenId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select garden_id, garden_name, garden_desc, garden_owner, address_id, garden_status, 
+    create_by, create_time, update_by, update_time, user_id
+    from garden
+  </select>
+</mapper>

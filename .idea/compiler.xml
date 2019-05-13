@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eureka2" />
+        <module name="eureka1" />
+        <module name="client" />
+        <module name="Consumer" />
+        <module name="hystrixturbine" />
+        <module name="zuul" />
+        <module name="provider" />
+        <module name="gateway" />
+        <module name="eureka" />
+        <module name="config" />
+        <module name="oauth" />
+        <module name="clientribbon" />
+        <module name="dashboard" />
+        <module name="providertwo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="clientFeign" target="1.8" />
+      <module name="common" target="1.7" />
+      <module name="demo" target="1.8" />
+      <module name="feignclient" target="1.8" />
+      <module name="hystirx" target="1.8" />
+      <module name="provider1" target="1.8" />
+      <module name="server" target="1.8" />
+      <module name="zuu" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Consumer" options="-parameters" />
+      <module name="client" options="-parameters" />
+      <module name="clientFeign" options="-parameters" />
+      <module name="clientribbon" options="-parameters" />
+      <module name="common" options="" />
+      <module name="config" options="-parameters" />
+      <module name="dashboard" options="-parameters" />
+      <module name="demo" options="-parameters" />
+      <module name="eureka" options="-parameters" />
+      <module name="eureka1" options="-parameters" />
+      <module name="eureka2" options="-parameters" />
+      <module name="feignclient" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="hystirx" options="-parameters" />
+      <module name="hystrixturbine" options="-parameters" />
+      <module name="oauth" options="-parameters" />
+      <module name="provider" options="-parameters" />
+      <module name="provider1" options="-parameters" />
+      <module name="providertwo" options="-parameters" />
+      <module name="server" options="-parameters" />
+      <module name="zuu" options="-parameters" />
+      <module name="zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

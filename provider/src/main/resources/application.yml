@@ -1,0 +1,22 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: eureka-server
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.108.98.48:3306/yftea?useUnicode=true&characterEncoding=utf8
+    username: yfzn
+    password: YFZN@db890
+  redis:
+    host: 39.108.98.48
+    database: 1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8081/eureka/,http://peer2:8082/eureka/
+mybatis:
+  mapper-locations:  classpath:mapping/*.xml
+  configuration:
+    call-setters-on-nulls: true

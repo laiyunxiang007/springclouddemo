@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:8083/
+      profile: test
+      discovery:
+        service-id: config-server
+      name: helloworld
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health
