@@ -13,7 +13,7 @@ public class ProvidertwoApplication {
     @GetMapping("/getgardenTest")
     public String gethello() throws InterruptedException {
         Thread.sleep(2000);
-        return "/getgardenTest";
+        return "Providertwo  调用成功";
     }
     public static void main(String[] args) {
         SpringApplication.run(ProvidertwoApplication.class, args);

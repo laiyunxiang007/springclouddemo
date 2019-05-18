@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka2" />
         <module name="eureka1" />
-        <module name="client" />
+        <module name="oauth" />
         <module name="Consumer" />
         <module name="hystrixturbine" />
         <module name="zuul" />
@@ -16,9 +16,9 @@
         <module name="gateway" />
         <module name="eureka" />
         <module name="config" />
-        <module name="oauth" />
-        <module name="clientribbon" />
         <module name="dashboard" />
+        <module name="client" />
+        <module name="clientribbon" />
         <module name="providertwo" />
       </profile>
     </annotationProcessing>

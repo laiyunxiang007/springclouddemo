@@ -7,6 +7,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+
+import java.util.Arrays;
 
 /**
  * 创建者 bee
@@ -15,12 +21,19 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
  * 创建时间 2019/4/29
  */
 @Configuration
-public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
+public class JWTOAuth2Config extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private JwtAccessTokenConverter jwtAccessTokenConverter;
+
+    @Autowired
+    private TokenEnhancer jwtTokenEnhancer;
+    @Autowired
+    private TokenStore tokenStore;
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
@@ -35,6 +48,14 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.authenticationManager(authenticationManager).userDetailsService(userDetailsService);
+//        endpoints.authenticationManager(authenticationManager).userDetailsService(userDetailsService);
+        TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(jwtTokenEnhancer, jwtAccessTokenConverter));
+
+        endpoints.tokenStore(tokenStore)                             //JWT
+                .accessTokenConverter(jwtAccessTokenConverter)       //JWT
+                .tokenEnhancer(tokenEnhancerChain)                   //JWT
+                .authenticationManager(authenticationManager)
+                .userDetailsService(userDetailsService);
     }
 }

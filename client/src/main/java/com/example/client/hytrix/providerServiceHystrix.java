@@ -16,5 +16,4 @@ public  class providerServiceHystrix implements providerService {
         return "对不起，服务出错了";
     }
 
-
 }

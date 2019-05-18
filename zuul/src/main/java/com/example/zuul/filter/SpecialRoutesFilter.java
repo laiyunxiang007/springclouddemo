@@ -42,7 +42,7 @@
 // * 类说明
 // * 创建时间 2019/5/9
 // */
-////@Component
+//@Component
 //public class SpecialRoutesFilter extends ZuulFilter {
 //    private static final int FILTER_ORDER = 1;
 //    private static final boolean SHOULD_FILTER = true;
@@ -79,7 +79,7 @@
 //                    buildRouteString(
 //                            String.valueOf(requestContext.getRequest().getRequestURL()),
 //                            "http://localhost:8091",
-//                            requestContext.get("serviceId").toString());
+//                            "/restTemplate/1");
 //            forwardToSpecialRoute(route);
 //        }
 //        return null;
@@ -220,9 +220,9 @@
 //        System.out.println(oldEndpoint + "===" + newEndpoint + "======" + serviceName);
 //        int index = oldEndpoint.indexOf(serviceName);
 //
-//        String strippedRoute = oldEndpoint.substring(index + serviceName.length());
-//        System.out.println("Target route: " + String.format("%s/%s", newEndpoint, strippedRoute));
-//        return String.format("%s/%s", newEndpoint, strippedRoute);
+////        String strippedRoute = oldEndpoint.substring(index + serviceName.length());
+//        System.out.println("Target route: " + String.format("%s%s", newEndpoint, serviceName));
+//        return String.format("%s%s", newEndpoint, serviceName);
 //    }
 //
 //    public AbTestingRoute getAbTestingRoute(String HeadOauths) {

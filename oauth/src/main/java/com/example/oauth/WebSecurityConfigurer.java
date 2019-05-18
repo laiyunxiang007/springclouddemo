@@ -38,7 +38,10 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                  .and()
                 .withUser("william.woodward")
                 .password("password2")
-                .roles("USER", "ADMIN");;
-
+                    .roles("USER", "ADMIN");
     }
+//    @Override
+////    public void configure(HttpSecurity http) throws Exception {
+////       http.authorizeRequests().anyRequest().access("hasRole('ADMIN') and hasIpAddress('192.168.1.1')")
+////    }
 }

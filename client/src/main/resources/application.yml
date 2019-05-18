@@ -60,9 +60,9 @@ management:
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:8091/user
+      user-info-uri: http://localhost:8094/user
     client:
       clientId: demo
       clientSecret: thissecret
-      accessTokenUri:  http://localhost:8091/oauth/token
+      accessTokenUri:  http://localhost:8094/oauth/token
       scope: webclient,mobileclient
