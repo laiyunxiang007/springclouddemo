@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="90c8ac68-bf75-4c3f-a874-8018de88586f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/garden-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/aspect/InterfaceCallLogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/config/CameraConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/config/CustomWebMvcConfigurer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/config/FmConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/config/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/config/RedisConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/config/RestTemplateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/config/Swagger2Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/constant/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/constant/OperModuleCodeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/constant/OperTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dao/MyBatisBaseDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dao/OrchardDictionaryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/BaseCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/CommSysLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/ConfigDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/DatapointDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/FmDatapointDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/FmInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/GatewayDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/InterfaceCallLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/LocationDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/Option.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/OrchardDictionary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/PageDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/QueryCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/dto/ResponseResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/error/BaseErrorType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/error/ServiceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/intercept/ApiInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/intercept/ApiUserAgentInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/AgricultureWork.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/BasePo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/DetectData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/Device.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/GroundBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/OrchardAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/OrchardSuggest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/OrchardSuggestExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/OrchardUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/Pluck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/SourceLabel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/Suggest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/session/SessionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/session/UserSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/test/GenerateTestReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/util/FdfsUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/util/HttpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/util/JacksonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/util/RestApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/util/SmsUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/util/StringUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/util/TokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/vo/LoginInfoVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/vo/UserInfoVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/vo/WarehouseVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/resources/camera.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/resources/common/OrchardDictionaryDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/resources/common/OrchardUserDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/resources/fdfs.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/resources/fm.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/resources/reportTemplate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/resources/reportTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/src/main/resources/sms.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/camera.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/aspect/InterfaceCallLogAspect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/cache/DataCache.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/config/CameraConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/config/CustomWebMvcConfigurer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/config/FmConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/config/GlobalExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/config/RedisConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/config/RestTemplateConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/config/Swagger2Configuration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/constant/Constants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/constant/OperModuleCodeEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/constant/OperTypeEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dao/MyBatisBaseDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dao/OrchardDictionaryDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/BaseCondition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/CommSysLog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/ConfigDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/DatapointDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/FmDatapointDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/FmInfoDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/GatewayDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/InterfaceCallLog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/LocationDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/Option.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/OrchardDictionary.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/PageDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/QueryCondition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/dto/ResponseResult.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/error/BaseErrorType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/error/ServiceException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/intercept/ApiInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/intercept/ApiUserAgentInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/po/AgricultureWork.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/po/BasePo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/po/DetectData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/po/Device.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/po/GroundBlock.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/po/OrchardAddress.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/po/OrchardSuggest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/po/OrchardSuggestExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/po/OrchardUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/po/Pluck.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/po/SourceLabel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/po/Suggest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/session/SessionManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/session/UserSession.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/test/GenerateTestReport.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/util/FdfsUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/util/HttpUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/util/JacksonUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/util/RestApi.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/util/SmsUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/util/StringUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/util/TokenHeader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/util/TokenPlayload.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/util/TokenUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/vo/LoginInfoVo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/vo/UserInfoVo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/com/yf/garden/common/vo/WarehouseVo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/common/OrchardDictionaryDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/common/OrchardUserDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/fdfs.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/fm.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/reportTemplate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/reportTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/classes/sms.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/garden-common-2.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garden-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/smartfox_info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/example/client/ClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/example/client/ClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/src/main/java/com/example/oauth/WebSecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/oauth/src/main/java/com/example/oauth/WebSecurityConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/src/main/java/com/example/zuul/filter/FilterUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul/src/main/java/com/example/zuul/filter/FilterUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/src/main/java/com/example/zuul/filter/TrackingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul/src/main/java/com/example/zuul/filter/TrackingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/zuul/src/main/resources/application.yml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/clientribbon/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/eureka/target/" />
+    <ignored path="$PROJECT_DIR$/provider/target/" />
+    <ignored path="$PROJECT_DIR$/oauth/target/" />
+    <ignored path="$PROJECT_DIR$/client/target/" />
+    <ignored path="$PROJECT_DIR$/eureka2/target/" />
+    <ignored path="$PROJECT_DIR$/providertwo/target/" />
+    <ignored path="$PROJECT_DIR$/gateway/target/" />
+    <ignored path="$PROJECT_DIR$/dashboard/target/" />
+    <ignored path="$PROJECT_DIR$/zuul/target/" />
+    <ignored path="$PROJECT_DIR$/hystrixturbine/target/" />
+    <ignored path="$PROJECT_DIR$/config/target/" />
+    <ignored path="$PROJECT_DIR$/garden-common/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/Pluck.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>enhance</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="E:\apache-maven-3.3.9-bin\apache-maven-3.3.9\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="lookForNested" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="springclouddemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springclouddemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\springclouddemo" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ClientribbonApplication">
+    <configuration name="ClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.client.ClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientribbonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="clientribbon" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.clientribbon.ClientribbonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="config" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.config.ConfigApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DashboardApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="dashboard" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.dashboard.DashboardApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Eureka2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eureka2.Eureka2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eureka.EurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.gateway.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HystrixturbineApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hystrixturbine" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.hystrixturbine.HystrixturbineApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OauthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="oauth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.oauth.OauthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="provider" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.provider.ProviderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProvidertwoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="providertwo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.providertwo.ProvidertwoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZuulApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zuul" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.zuul.ZuulApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="90c8ac68-bf75-4c3f-a874-8018de88586f" name="Default Changelist" comment="" />
+      <created>1559540760835</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559540760835</updated>
+      <workItem from="1559540762018" duration="2287000" />
+      <workItem from="1559546983714" duration="630000" />
+      <workItem from="1559609484839" duration="1517000" />
+      <workItem from="1562309612668" duration="689000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="5123000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32995737" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/token/TokenEnhancer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/common/DefaultOAuth2AccessToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1080">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oauth/src/main/java/com/example/oauth/MyPasswordEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oauth/src/main/java/com/example/oauth/config/ServiceConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding>
+            <element signature="e#239#240#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/token/store/JwtTokenStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+          <folding>
+            <element signature="e#2435#2436#0" expanded="true" />
+            <element signature="e#2482#2483#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/jce.jar!/javax/crypto/spec/SecretKeySpec.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-jwt/1.0.9.RELEASE/spring-security-jwt-1.0.9.RELEASE-sources.jar!/org/springframework/security/jwt/crypto/sign/MacSigner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+          <folding>
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#1198#1199#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/token/store/JwtAccessTokenConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+          <folding>
+            <element signature="e#6220#6221#0" expanded="true" />
+            <element signature="e#6262#6263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/config/annotation/web/configurers/AuthorizationServerEndpointsConfigurer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="100" column="26" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/config/annotation/web/configuration/AuthorizationServerConfigurerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/token/TokenEnhancerChain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding>
+            <element signature="e#1214#1215#0" expanded="true" />
+            <element signature="e#1247#1248#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oauth/src/main/java/com/example/oauth/JWTOAuth2Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/token/TokenStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oauth/src/main/java/com/example/oauth/JWTTokenEnhancer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oauth/src/main/java/com/example/oauth/JWTTokenStoreConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oauth/src/main/java/com/example/oauth/WebSecurityConfigurer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garden-common/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3606" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/session/SessionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/test/GenerateTestReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/vo/LoginInfoVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/garden-common/src/main/java/com/yf/garden/common/po/Pluck.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
