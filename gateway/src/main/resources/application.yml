@@ -10,7 +10,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 4000
+            timeoutInMilliseconds: 7000
 spring:
   application:
     name: eureka-gateway
@@ -19,6 +19,8 @@ spring:
       discovery:
         locator:
           lower-case-service-id: true
+          enabled: true
+
       routes:
         - id: eureka-client
           uri: lb://eureka-client

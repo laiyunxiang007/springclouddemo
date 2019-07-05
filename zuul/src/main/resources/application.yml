@@ -16,7 +16,9 @@ zuul:
   host:
     connect-timeout-millis: 10000
     socket-timeout-millis: 10000
-#  sensitive-headers: Cookie,Set-Cookie
+  ignored-services: '*'
+
+  sensitive-headers: Cookie,Set-Cookie
 
 ribbon:
   ReadTimeout: 8000
@@ -29,7 +31,21 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 8000
+
 security:
   oauth2:
+    client:
+      access-token-uri:  http://localhost:8094/oauth/token
+      user-authorization-uri:
+      client-id: eureka-zuul
+      client-secret: thissecret
     resource:
       user-info-uri: http://localhost:8094/user
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

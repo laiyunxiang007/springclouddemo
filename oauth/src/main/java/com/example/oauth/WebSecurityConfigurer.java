@@ -33,11 +33,11 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
             auth.inMemoryAuthentication().passwordEncoder(new MyPasswordEncoder()).
                     withUser("john.carnell")
-                 .password("password1")
-                 .roles("USER")
-                 .and()
-                .withUser("william.woodward")
-                .password("password2")
+                    .password("password1")
+                    .roles("USER")
+                    .and()
+                    .withUser("william.woodward")
+                    .password("password2")
                     .roles("USER", "ADMIN");
     }
 //    @Override

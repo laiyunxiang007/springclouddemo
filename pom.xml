@@ -44,5 +44,9 @@
           <version>2.1.4.RELEASE</version>
       </dependency>
   </dependencies>
-
+<modules>
+    <module>garden-common</module>
+    <module>provider</module>
+    <module>client</module>
+</modules>
 </project>

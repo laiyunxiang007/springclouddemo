@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yf.garden.common.dao.OrchardUserDao">
+    <resultMap id="BaseResultMap" type="com.yf.garden.common.po.OrchardUser">
+        <id column="orchard_user_user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="orchard_user_user_account" jdbcType="VARCHAR" property="userAccount"/>
+        <result column="orchard_user_user_password" jdbcType="VARCHAR" property="userPassword"/>
+        <result column="orchard_user_user_real_name" jdbcType="VARCHAR" property="userRealName"/>
+        <result column="orchard_user_user_role" jdbcType="VARCHAR" property="userRole"/>
+        <result column="orchard_user_user_mobile" jdbcType="VARCHAR" property="userMobile"/>
+        <result column="orchard_user_user_addr_id" jdbcType="BIGINT" property="userAddrId"/>
+        <result column="orchard_user_user_status" jdbcType="INTEGER" property="userStatus"/>
+        <result column="orchard_user_user_head" jdbcType="VARCHAR" property="userHead"/>
+        <result column="orchard_user_user_create_by" jdbcType="BIGINT" property="userCreateBy"/>
+        <result column="orchard_user_user_cret_time" jdbcType="TIMESTAMP" property="userCretTime"/>
+        <result column="orchard_user_user_update_time" jdbcType="TIMESTAMP" property="userUpdateTime"/>
+        <result column="orchard_user_user_update_by" jdbcType="BIGINT" property="userUpdateBy"/>
+        <result column="orchard_user_user_delete_flag" jdbcType="INTEGER" property="userDeleteFlag"/>
+        <result column="orchard_user_user_join_date" jdbcType="TIMESTAMP" property="userJoinDate"/>
+        <result column="orchard_user_user_wchat_open_id" jdbcType="VARCHAR" property="userWchatOpenId"/>
+        <result column="orchard_user_user_type" jdbcType="INTEGER" property="userType"/>
+        <result column="orchard_user_user_wchart_nick_name" jdbcType="VARCHAR" property="userWchartNickName"/>
+        <result column="orchard_user_user_email" jdbcType="VARCHAR" property="userEmail"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    orchard_user.user_id as orchard_user_user_id, orchard_user.user_account as orchard_user_user_account, 
+    orchard_user.user_password as orchard_user_user_password, orchard_user.user_real_name as orchard_user_user_real_name, 
+    orchard_user.user_role as orchard_user_user_role, orchard_user.user_mobile as orchard_user_user_mobile, 
+    orchard_user.user_addr_id as orchard_user_user_addr_id, orchard_user.user_status as orchard_user_user_status, 
+    orchard_user.user_head as orchard_user_user_head, orchard_user.user_create_by as orchard_user_user_create_by, 
+    orchard_user.user_cret_time as orchard_user_user_cret_time, orchard_user.user_update_time as orchard_user_user_update_time, 
+    orchard_user.user_update_by as orchard_user_user_update_by, orchard_user.user_delete_flag as orchard_user_user_delete_flag, 
+    orchard_user.user_join_date as orchard_user_user_join_date, orchard_user.user_wchat_open_id as orchard_user_user_wchat_open_id, 
+    orchard_user.user_type as orchard_user_user_type, orchard_user.user_wchart_nick_name as orchard_user_user_wchart_nick_name, 
+    orchard_user.user_email as orchard_user_user_email
+  </sql>
+    <select id="selectByExample" parameterType="com.yf.garden.common.po.OrchardUserExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from orchard_user orchard_user
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+        <if test="limit != null">
+            <if test="offset != null">
+                limit ${offset}, ${limit}
+            </if>
+            <if test="offset == null">
+                limit ${limit}
+            </if>
+        </if>
+        <if test="forUpdate != null and forUpdate == true">
+            for update
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from orchard_user orchard_user
+        where orchard_user.user_id = #{userId,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from orchard_user
+    where user_id = #{userId,jdbcType=BIGINT}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.yf.garden.common.po.OrchardUserExample">
+        delete from orchard_user orchard_user
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="com.yf.garden.common.po.OrchardUser"
+            useGeneratedKeys="true">
+    insert into orchard_user (user_account, user_password, user_real_name, 
+      user_role, user_mobile, user_addr_id, 
+      user_status, user_head, user_create_by, 
+      user_cret_time, user_update_time, user_update_by, 
+      user_delete_flag, user_join_date, user_wchat_open_id, 
+      user_type, user_wchart_nick_name, user_email
+      )
+    values (#{userAccount,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR}, #{userRealName,jdbcType=VARCHAR}, 
+      #{userRole,jdbcType=VARCHAR}, #{userMobile,jdbcType=VARCHAR}, #{userAddrId,jdbcType=BIGINT}, 
+      #{userStatus,jdbcType=INTEGER}, #{userHead,jdbcType=VARCHAR}, #{userCreateBy,jdbcType=BIGINT}, 
+      #{userCretTime,jdbcType=TIMESTAMP}, #{userUpdateTime,jdbcType=TIMESTAMP}, #{userUpdateBy,jdbcType=BIGINT}, 
+      #{userDeleteFlag,jdbcType=INTEGER}, #{userJoinDate,jdbcType=TIMESTAMP}, #{userWchatOpenId,jdbcType=VARCHAR}, 
+      #{userType,jdbcType=INTEGER}, #{userWchartNickName,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}
+      )
+  </insert>
+    <insert id="insertSelective" keyColumn="user_id" keyProperty="userId"
+            parameterType="com.yf.garden.common.po.OrchardUser" useGeneratedKeys="true">
+        insert into orchard_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userAccount != null">
+                user_account,
+            </if>
+            <if test="userPassword != null">
+                user_password,
+            </if>
+            <if test="userRealName != null">
+                user_real_name,
+            </if>
+            <if test="userRole != null">
+                user_role,
+            </if>
+            <if test="userMobile != null">
+                user_mobile,
+            </if>
+            <if test="userAddrId != null">
+                user_addr_id,
+            </if>
+            <if test="userStatus != null">
+                user_status,
+            </if>
+            <if test="userHead != null">
+                user_head,
+            </if>
+            <if test="userCreateBy != null">
+                user_create_by,
+            </if>
+            <if test="userCretTime != null">
+                user_cret_time,
+            </if>
+            <if test="userUpdateTime != null">
+                user_update_time,
+            </if>
+            <if test="userUpdateBy != null">
+                user_update_by,
+            </if>
+            <if test="userDeleteFlag != null">
+                user_delete_flag,
+            </if>
+            <if test="userJoinDate != null">
+                user_join_date,
+            </if>
+            <if test="userWchatOpenId != null">
+                user_wchat_open_id,
+            </if>
+            <if test="userType != null">
+                user_type,
+            </if>
+            <if test="userWchartNickName != null">
+                user_wchart_nick_name,
+            </if>
+            <if test="userEmail != null">
+                user_email,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userAccount != null">
+                #{userAccount,jdbcType=VARCHAR},
+            </if>
+            <if test="userPassword != null">
+                #{userPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="userRealName != null">
+                #{userRealName,jdbcType=VARCHAR},
+            </if>
+            <if test="userRole != null">
+                #{userRole,jdbcType=VARCHAR},
+            </if>
+            <if test="userMobile != null">
+                #{userMobile,jdbcType=VARCHAR},
+            </if>
+            <if test="userAddrId != null">
+                #{userAddrId,jdbcType=BIGINT},
+            </if>
+            <if test="userStatus != null">
+                #{userStatus,jdbcType=INTEGER},
+            </if>
+            <if test="userHead != null">
+                #{userHead,jdbcType=VARCHAR},
+            </if>
+            <if test="userCreateBy != null">
+                #{userCreateBy,jdbcType=BIGINT},
+            </if>
+            <if test="userCretTime != null">
+                #{userCretTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userUpdateTime != null">
+                #{userUpdateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userUpdateBy != null">
+                #{userUpdateBy,jdbcType=BIGINT},
+            </if>
+            <if test="userDeleteFlag != null">
+                #{userDeleteFlag,jdbcType=INTEGER},
+            </if>
+            <if test="userJoinDate != null">
+                #{userJoinDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userWchatOpenId != null">
+                #{userWchatOpenId,jdbcType=VARCHAR},
+            </if>
+            <if test="userType != null">
+                #{userType,jdbcType=INTEGER},
+            </if>
+            <if test="userWchartNickName != null">
+                #{userWchartNickName,jdbcType=VARCHAR},
+            </if>
+            <if test="userEmail != null">
+                #{userEmail,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.yf.garden.common.po.OrchardUserExample" resultType="java.lang.Long">
+        select count(*) from orchard_user orchard_user
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update orchard_user orchard_user
+        <set>
+            <if test="userId != null">
+                orchard_user.user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="userAccount != null">
+                orchard_user.user_account = #{userAccount,jdbcType=VARCHAR},
+            </if>
+            <if test="userPassword != null">
+                orchard_user.user_password = #{userPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="userRealName != null">
+                orchard_user.user_real_name = #{userRealName,jdbcType=VARCHAR},
+            </if>
+            <if test="userRole != null">
+                orchard_user.user_role = #{userRole,jdbcType=VARCHAR},
+            </if>
+            <if test="userMobile != null">
+                orchard_user.user_mobile = #{userMobile,jdbcType=VARCHAR},
+            </if>
+            <if test="userAddrId != null">
+                orchard_user.user_addr_id = #{userAddrId,jdbcType=BIGINT},
+            </if>
+            <if test="userStatus != null">
+                orchard_user.user_status = #{userStatus,jdbcType=INTEGER},
+            </if>
+            <if test="userHead != null">
+                orchard_user.user_head = #{userHead,jdbcType=VARCHAR},
+            </if>
+            <if test="userCreateBy != null">
+                orchard_user.user_create_by = #{userCreateBy,jdbcType=BIGINT},
+            </if>
+            <if test="userCretTime != null">
+                orchard_user.user_cret_time = #{userCretTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userUpdateTime != null">
+                orchard_user.user_update_time = #{userUpdateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userUpdateBy != null">
+                orchard_user.user_update_by = #{userUpdateBy,jdbcType=BIGINT},
+            </if>
+            <if test="userDeleteFlag != null">
+                orchard_user.user_delete_flag = #{userDeleteFlag,jdbcType=INTEGER},
+            </if>
+            <if test="userJoinDate != null">
+                orchard_user.user_join_date = #{userJoinDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userWchatOpenId != null">
+                orchard_user.user_wchat_open_id = #{userWchatOpenId,jdbcType=VARCHAR},
+            </if>
+            <if test="userType != null">
+                orchard_user.user_type = #{userType,jdbcType=INTEGER},
+            </if>
+            <if test="userWchartNickName != null">
+                orchard_user.user_wchart_nick_name = #{userWchartNickName,jdbcType=VARCHAR},
+            </if>
+            <if test="userEmail != null">
+                orchard_user.user_email = #{userEmail,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update orchard_user orchard_user
+        set orchard_user.user_id = #{userId,jdbcType=BIGINT},
+        orchard_user.user_account = #{userAccount,jdbcType=VARCHAR},
+        orchard_user.user_password = #{userPassword,jdbcType=VARCHAR},
+        orchard_user.user_real_name = #{userRealName,jdbcType=VARCHAR},
+        orchard_user.user_role = #{userRole,jdbcType=VARCHAR},
+        orchard_user.user_mobile = #{userMobile,jdbcType=VARCHAR},
+        orchard_user.user_addr_id = #{userAddrId,jdbcType=BIGINT},
+        orchard_user.user_status = #{userStatus,jdbcType=INTEGER},
+        orchard_user.user_head = #{userHead,jdbcType=VARCHAR},
+        orchard_user.user_create_by = #{userCreateBy,jdbcType=BIGINT},
+        orchard_user.user_cret_time = #{userCretTime,jdbcType=TIMESTAMP},
+        orchard_user.user_update_time = #{userUpdateTime,jdbcType=TIMESTAMP},
+        orchard_user.user_update_by = #{userUpdateBy,jdbcType=BIGINT},
+        orchard_user.user_delete_flag = #{userDeleteFlag,jdbcType=INTEGER},
+        orchard_user.user_join_date = #{userJoinDate,jdbcType=TIMESTAMP},
+        orchard_user.user_wchat_open_id = #{userWchatOpenId,jdbcType=VARCHAR},
+        orchard_user.user_type = #{userType,jdbcType=INTEGER},
+        orchard_user.user_wchart_nick_name = #{userWchartNickName,jdbcType=VARCHAR},
+        orchard_user.user_email = #{userEmail,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.yf.garden.common.po.OrchardUser">
+        update orchard_user
+        <set>
+            <if test="userAccount != null">
+                user_account = #{userAccount,jdbcType=VARCHAR},
+            </if>
+            <if test="userPassword != null">
+                user_password = #{userPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="userRealName != null">
+                user_real_name = #{userRealName,jdbcType=VARCHAR},
+            </if>
+            <if test="userRole != null">
+                user_role = #{userRole,jdbcType=VARCHAR},
+            </if>
+            <if test="userMobile != null">
+                user_mobile = #{userMobile,jdbcType=VARCHAR},
+            </if>
+            <if test="userAddrId != null">
+                user_addr_id = #{userAddrId,jdbcType=BIGINT},
+            </if>
+            <if test="userStatus != null">
+                user_status = #{userStatus,jdbcType=INTEGER},
+            </if>
+            <if test="userHead != null">
+                user_head = #{userHead,jdbcType=VARCHAR},
+            </if>
+            <if test="userCreateBy != null">
+                user_create_by = #{userCreateBy,jdbcType=BIGINT},
+            </if>
+            <if test="userCretTime != null">
+                user_cret_time = #{userCretTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userUpdateTime != null">
+                user_update_time = #{userUpdateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userUpdateBy != null">
+                user_update_by = #{userUpdateBy,jdbcType=BIGINT},
+            </if>
+            <if test="userDeleteFlag != null">
+                user_delete_flag = #{userDeleteFlag,jdbcType=INTEGER},
+            </if>
+            <if test="userJoinDate != null">
+                user_join_date = #{userJoinDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userWchatOpenId != null">
+                user_wchat_open_id = #{userWchatOpenId,jdbcType=VARCHAR},
+            </if>
+            <if test="userType != null">
+                user_type = #{userType,jdbcType=INTEGER},
+            </if>
+            <if test="userWchartNickName != null">
+                user_wchart_nick_name = #{userWchartNickName,jdbcType=VARCHAR},
+            </if>
+            <if test="userEmail != null">
+                user_email = #{userEmail,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where user_id = #{userId,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.yf.garden.common.po.OrchardUser">
+    update orchard_user
+    set user_account = #{userAccount,jdbcType=VARCHAR},
+      user_password = #{userPassword,jdbcType=VARCHAR},
+      user_real_name = #{userRealName,jdbcType=VARCHAR},
+      user_role = #{userRole,jdbcType=VARCHAR},
+      user_mobile = #{userMobile,jdbcType=VARCHAR},
+      user_addr_id = #{userAddrId,jdbcType=BIGINT},
+      user_status = #{userStatus,jdbcType=INTEGER},
+      user_head = #{userHead,jdbcType=VARCHAR},
+      user_create_by = #{userCreateBy,jdbcType=BIGINT},
+      user_cret_time = #{userCretTime,jdbcType=TIMESTAMP},
+      user_update_time = #{userUpdateTime,jdbcType=TIMESTAMP},
+      user_update_by = #{userUpdateBy,jdbcType=BIGINT},
+      user_delete_flag = #{userDeleteFlag,jdbcType=INTEGER},
+      user_join_date = #{userJoinDate,jdbcType=TIMESTAMP},
+      user_wchat_open_id = #{userWchatOpenId,jdbcType=VARCHAR},
+      user_type = #{userType,jdbcType=INTEGER},
+      user_wchart_nick_name = #{userWchartNickName,jdbcType=VARCHAR},
+      user_email = #{userEmail,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=BIGINT}
+  </update>
+</mapper>

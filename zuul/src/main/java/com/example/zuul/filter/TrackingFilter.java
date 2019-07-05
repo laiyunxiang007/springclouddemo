@@ -56,7 +56,7 @@ public class TrackingFilter extends ZuulFilter {
     @Override
     public Object run() {
         String i = getOrganizationId();
-        System.out.println("token===" + i);
+        System.out.println("organizationId===" + i);
         if (isCorrelationIdPresent()) {
             logger.debug("tmx-correlation-id found in tracking filter: {}. ", filterUtils.getCorrelationId());
         } else {
@@ -72,7 +72,8 @@ public class TrackingFilter extends ZuulFilter {
     private String getOrganizationId() {
         String result = "";
         if (filterUtils.getAuthToken() != null) {
-            String authToken = filterUtils.getAuthToken();
+            String authToken = filterUtils.getAuthToken()
+                    .replace("bearer ","");
             try {
                 Claims claims = Jwts.parser()
                         .setSigningKey(serviceConfig.getJwtSigningKey()

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yf.garden.common.dao.OrchardDictionaryDao">
+    <resultMap id="BaseResultMap" type="com.yf.garden.common.dto.OrchardDictionary">
+        <id column="orchard_dictionary_dic_id" jdbcType="BIGINT" property="dicId"/>
+        <result column="orchard_dictionary_dic_type_code" jdbcType="VARCHAR" property="dicTypeCode"/>
+        <result column="orchard_dictionary_dic_code" jdbcType="VARCHAR" property="dicCode"/>
+        <result column="orchard_dictionary_dic_val" jdbcType="VARCHAR" property="dicVal"/>
+        <result column="orchard_dictionary_dic_display_order" jdbcType="INTEGER" property="dicDisplayOrder"/>
+        <result column="orchard_dictionary_dic_remark" jdbcType="VARCHAR" property="dicRemark"/>
+        <result column="orchard_dictionary_dic_delete_flag" jdbcType="INTEGER" property="dicDeleteFlag"/>
+    </resultMap>
+
+
+    <sql id="Base_Column_List">
+    orchard_dictionary.dic_id as orchard_dictionary_dic_id, orchard_dictionary.dic_type_code as orchard_dictionary_dic_type_code, 
+    orchard_dictionary.dic_code as orchard_dictionary_dic_code, orchard_dictionary.dic_val as orchard_dictionary_dic_val, 
+    orchard_dictionary.dic_display_order as orchard_dictionary_dic_display_order, orchard_dictionary.dic_remark as orchard_dictionary_dic_remark, 
+    orchard_dictionary.dic_delete_flag as orchard_dictionary_dic_delete_flag
+  </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from orchard_dictionary orchard_dictionary
+        where orchard_dictionary.dic_id = #{dicId,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from orchard_dictionary
+    where dic_id = #{dicId,jdbcType=BIGINT}
+  </delete>
+
+    <insert id="insert" keyColumn="dic_id" keyProperty="dicId"
+            parameterType="com.yf.garden.common.dto.OrchardDictionary" useGeneratedKeys="true">
+    insert into orchard_dictionary (dic_type_code, dic_code, dic_val, 
+      dic_display_order, dic_remark, dic_delete_flag
+      )
+    values (#{dicTypeCode,jdbcType=VARCHAR}, #{dicCode,jdbcType=VARCHAR}, #{dicVal,jdbcType=VARCHAR}, 
+      #{dicDisplayOrder,jdbcType=INTEGER}, #{dicRemark,jdbcType=VARCHAR}, #{dicDeleteFlag,jdbcType=INTEGER}
+      )
+  </insert>
+    <insert id="insertSelective" keyColumn="dic_id" keyProperty="dicId"
+            parameterType="com.yf.garden.common.dto.OrchardDictionary" useGeneratedKeys="true">
+        insert into orchard_dictionary
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="dicTypeCode != null">
+                dic_type_code,
+            </if>
+            <if test="dicCode != null">
+                dic_code,
+            </if>
+            <if test="dicVal != null">
+                dic_val,
+            </if>
+            <if test="dicDisplayOrder != null">
+                dic_display_order,
+            </if>
+            <if test="dicRemark != null">
+                dic_remark,
+            </if>
+            <if test="dicDeleteFlag != null">
+                dic_delete_flag,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="dicTypeCode != null">
+                #{dicTypeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="dicCode != null">
+                #{dicCode,jdbcType=VARCHAR},
+            </if>
+            <if test="dicVal != null">
+                #{dicVal,jdbcType=VARCHAR},
+            </if>
+            <if test="dicDisplayOrder != null">
+                #{dicDisplayOrder,jdbcType=INTEGER},
+            </if>
+            <if test="dicRemark != null">
+                #{dicRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="dicDeleteFlag != null">
+                #{dicDeleteFlag,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.yf.garden.common.dto.OrchardDictionary">
+        update orchard_dictionary
+        <set>
+            <if test="dicTypeCode != null">
+                dic_type_code = #{dicTypeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="dicCode != null">
+                dic_code = #{dicCode,jdbcType=VARCHAR},
+            </if>
+            <if test="dicVal != null">
+                dic_val = #{dicVal,jdbcType=VARCHAR},
+            </if>
+            <if test="dicDisplayOrder != null">
+                dic_display_order = #{dicDisplayOrder,jdbcType=INTEGER},
+            </if>
+            <if test="dicRemark != null">
+                dic_remark = #{dicRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="dicDeleteFlag != null">
+                dic_delete_flag = #{dicDeleteFlag,jdbcType=INTEGER},
+            </if>
+        </set>
+        where dic_id = #{dicId,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.yf.garden.common.dto.OrchardDictionary">
+    update orchard_dictionary
+    set dic_type_code = #{dicTypeCode,jdbcType=VARCHAR},
+      dic_code = #{dicCode,jdbcType=VARCHAR},
+      dic_val = #{dicVal,jdbcType=VARCHAR},
+      dic_display_order = #{dicDisplayOrder,jdbcType=INTEGER},
+      dic_remark = #{dicRemark,jdbcType=VARCHAR},
+      dic_delete_flag = #{dicDeleteFlag,jdbcType=INTEGER}
+    where dic_id = #{dicId,jdbcType=BIGINT}
+  </update>
+    <select id="selectAll" resultType="com.yf.garden.common.dto.OrchardDictionary">
+        SELECT dic_id dicId, dic_type_code dicTypeCode, dic_code dicCode, dic_val dicVal, dic_remark dicRemark   FROM orchard_dictionary
+    </select>
+    <select id="selectByType" resultType="com.yf.garden.common.dto.OrchardDictionary">
+        SELECT dic_id dicId, dic_type_code dicTypeCode, dic_code dicCode, dic_val dicVal, dic_remark dicRemark   FROM orchard_dictionary where dic_type_code=#{typeCode}
+    </select>
+</mapper>
